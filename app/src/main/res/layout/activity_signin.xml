@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".Signin">
 
     <TextView
         android:id="@+id/welcome_txt"
@@ -13,7 +14,7 @@
         android:text="Welcome"
         android:textSize="80px"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/red"/>
+        android:textColor="@color/teal_200"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,16 +26,6 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/login_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="I Already have an account"
-                android:textSize="50px"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="50px"
-                android:textColor="@color/teal_200"/>
-
-            <TextView
                 android:id="@+id/name_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,8 +33,7 @@
                 android:textSize="50px"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50px"
-                android:textColor="@color/red"
-                android:layout_below="@+id/login_txt"/>
+                android:textColor="@color/red" />
 
             <EditText
                 android:id="@+id/name_edit"

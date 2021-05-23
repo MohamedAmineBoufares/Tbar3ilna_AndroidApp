@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Tbar3ilna</string>
+
+    <string name="welcome_body1">
+        You\'re now a donor and we hope that together we can help and save a lot of people.
+    </string>
+
+    <string name="welcome_body2">
+        If we need any donation from you will receive a push notification on your phone
+    </string>
+
+    <string name="welcome_body3">
+        If you want to provide us with more information so we can reach you better
+    </string>
+
 </resources>

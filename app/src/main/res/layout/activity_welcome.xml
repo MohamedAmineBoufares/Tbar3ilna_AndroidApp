@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Welcome">
+
+    <TextView
+        android:id="@+id/main_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:layout_marginTop="20px"
+        android:layout_centerHorizontal="true"
+        android:textSize="50px"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_txt"
+        android:layout_marginTop="25px">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/welcome_txt_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_body1"
+                android:layout_centerHorizontal="true"
+                android:textSize="50px"
+                android:textAlignment="center"
+                android:layout_margin="50px"
+                android:textColor="@color/red"/>
+
+            <TextView
+                android:id="@+id/welcome_txt_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/welcome_txt_1"
+                android:text="@string/welcome_body2"
+                android:layout_centerHorizontal="true"
+                android:textSize="50px"
+                android:textAlignment="center"
+                android:layout_margin="50px"/>
+
+            <TextView
+                android:id="@+id/welcome_txt_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/welcome_txt_2"
+                android:text="@string/welcome_body3"
+                android:layout_centerHorizontal="true"
+                android:textSize="50px"
+                android:textAlignment="center"
+                android:layout_margin="50px"
+                android:textColor="@color/red"/>
+
+            <Button
+                android:id="@+id/btn_more_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Press here"
+                android:layout_below="@+id/welcome_txt_3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50px"/>
+
+            <Button
+                android:id="@+id/btn_feed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go to feed"
+                android:layout_below="@+id/btn_more_info"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50px"/>
+
+            <Button
+                android:id="@+id/btn_logout_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign out"
+                android:layout_below="@+id/btn_feed"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50px"
+                android:onClick="logOut"
+                android:layout_marginBottom="20px"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

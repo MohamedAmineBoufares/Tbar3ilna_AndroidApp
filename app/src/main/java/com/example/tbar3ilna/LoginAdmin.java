@@ -18,37 +18,42 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Login extends AppCompatActivity {
+public class LoginAdmin extends AppCompatActivity {
 
-    private EditText mCin, mPassword;
+    private EditText mUserName, mPassword;
     private Button mLogin;
-    private TextView mSignin;
     private ProgressBar progressBar;
+
     private FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_admin);
 
-        mCin = (EditText) findViewById(R.id.cin_login_edit);
-        mPassword = (EditText) findViewById(R.id.password_login_edit);
-        mLogin = (Button) findViewById(R.id.btn_login);
-        progressBar = (ProgressBar) findViewById(R.id.progress_login);
+        mUserName = (EditText) findViewById(R.id.name_admin_edit);
+        mPassword = (EditText) findViewById(R.id.password_login_admin_edit);
 
-        mSignin = (TextView) findViewById(R.id.signin_txt);
+        mLogin = (Button) findViewById(R.id.btn_login_admin);
 
-        fAuth= FirebaseAuth.getInstance();
+        progressBar = (ProgressBar) findViewById(R.id.progress_login_admin);
+
+        fAuth = FirebaseAuth.getInstance();
+
+        if (fAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), Feed.class));
+            finish();
+        }
 
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String cin = mCin.getText().toString().trim();
+                String userName = mUserName.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
 
-                if ( TextUtils.isEmpty(cin)  | TextUtils.isEmpty(password) ) {
+                if ( TextUtils.isEmpty(userName)  | TextUtils.isEmpty(password) ) {
 
                     Toast.makeText(getApplicationContext(), "There is a missing field", Toast.LENGTH_SHORT).show();
 
@@ -57,7 +62,7 @@ public class Login extends AppCompatActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                fAuth.signInWithEmailAndPassword(cin+"@tbar3ilna.tn", password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                fAuth.signInWithEmailAndPassword(userName+"@tbar3ilna.tn", password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -65,7 +70,8 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             Toast.makeText(getApplicationContext(), "Logged In", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            Intent intent = new Intent(getApplicationContext(), Feed.class);
+                            startActivity(intent);
 
                         } else {
 
@@ -82,11 +88,5 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        mSignin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Register.class));
-            }
-        });
     }
 }
