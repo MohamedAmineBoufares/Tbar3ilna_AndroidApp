@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "488603068327",
+    "project_id": "tbar3ilna",
+    "storage_bucket": "tbar3ilna.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488603068327:android:b7086ce5affbf563da7882",
+        "android_client_info": {
+          "package_name": "com.example.tbar3ilna"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488603068327-8ctb44rbs2up8goa30ed73rjfkgvajd6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7ilvQIh_Sq9nnqwVqDfGpSYz_Q1iOA0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488603068327-8ctb44rbs2up8goa30ed73rjfkgvajd6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
