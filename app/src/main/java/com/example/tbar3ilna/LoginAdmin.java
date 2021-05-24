@@ -70,7 +70,7 @@ public class LoginAdmin extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             Toast.makeText(getApplicationContext(), "Logged In", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), Feed.class);
+                            Intent intent = new Intent(getApplicationContext(), DonationReq.class);
                             startActivity(intent);
 
                         } else {
