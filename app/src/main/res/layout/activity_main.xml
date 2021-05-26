@@ -59,7 +59,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50px"
         android:textSize="30px"
-        android:inputType="text"/>
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/btn_login"

@@ -27,7 +27,7 @@ public class Signin extends AppCompatActivity {
     private ProgressBar progressBar;
 
     private FirebaseAuth fAuth;
-    private FirebaseDatabase rooNode;
+    private FirebaseDatabase rootNode;
     private DatabaseReference reference;
 
 
@@ -55,10 +55,10 @@ public class Signin extends AppCompatActivity {
             public void onClick(View view) {
 
                 // getting my DB instance => DB name
-                rooNode = FirebaseDatabase.getInstance();
+                rootNode = FirebaseDatabase.getInstance();
 
                 // getting my DB field which I want to upload to
-                reference = rooNode.getReference("users");
+                reference = rootNode.getReference("users");
 
                 String fullName = mFullName.getText().toString().trim();
                 String birthDate = mBirthDate.getText().toString().trim();
@@ -81,7 +81,9 @@ public class Signin extends AppCompatActivity {
                 // set progress bar to Visible
                 progressBar.setVisibility(View.VISIBLE);
 
-                fAuth.createUserWithEmailAndPassword(cin+"@tbar3ilna.tn", password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                fAuth.createUserWithEmailAndPassword(cin+"@tbar3ilna.tn", password).
+                        addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -94,6 +96,7 @@ public class Signin extends AppCompatActivity {
 
                             Intent intent = new Intent(getApplicationContext(), Welcome.class);
                             intent.putExtra("user_name", fullName);
+                            intent.putExtra("user_cin", cin);
                             startActivity(intent);
 
                         } else {

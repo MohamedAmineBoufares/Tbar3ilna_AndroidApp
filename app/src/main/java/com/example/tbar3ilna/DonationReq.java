@@ -1,10 +1,14 @@
 package com.example.tbar3ilna;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -24,13 +29,15 @@ public class DonationReq extends AppCompatActivity {
     private Button mAdd;
     private ProgressBar progressBar;
 
-    private FirebaseDatabase rooNode;
+    private FirebaseDatabase rootNode;
     private DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_req);
+
+        String adminName = getIntent().getStringExtra("admin_userName");
 
         mFullName = (EditText) findViewById(R.id.name_donationReq_edit);
         mBloodGrp = (EditText) findViewById(R.id.bloodGrp_donationReq_edit);
@@ -46,6 +53,7 @@ public class DonationReq extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Feed.class);
+                intent.putExtra("admin_userName", adminName);
                 startActivity(intent);
             }
         });
@@ -55,17 +63,18 @@ public class DonationReq extends AppCompatActivity {
             public void onClick(View view) {
 
                 // getting my DB instance => DB name
-                rooNode = FirebaseDatabase.getInstance();
+                rootNode = FirebaseDatabase.getInstance();
 
                 // getting my DB field which I want to upload to
-                reference = rooNode.getReference("Feed");
+                reference = rootNode.getReference("Feed");
 
                 String fullName = mFullName.getText().toString().trim();
                 String bloodGroup = mBloodGrp.getText().toString().trim();
                 String location = mLocation.getText().toString().trim();
 
+
                 // this class contains the fields that need to be sent to DB
-                AdminHelper adminHelper = new AdminHelper(fullName, location,bloodGroup);
+                AdminHelper adminHelper = new AdminHelper(fullName, location,bloodGroup, adminName, 0);
 
                 // if any of the fields is empty, display a toast and don't do nothing
                 if (TextUtils.isEmpty(fullName) | TextUtils.isEmpty(bloodGroup) | TextUtils.isEmpty(location)) {
@@ -88,4 +97,5 @@ public class DonationReq extends AppCompatActivity {
             }
         });
     }
+
 }

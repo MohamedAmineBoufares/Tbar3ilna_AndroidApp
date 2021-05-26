@@ -6,6 +6,125 @@
     android:layout_height="match_parent"
     tools:context=".Moreinfo">
 
+    <TextView
+        android:id="@+id/info_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/red"
+        android:text="Add more info"
+        android:textSize="80px"
+        android:layout_marginTop="20px"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/info_txt"
+        android:layout_marginTop="20px">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/address_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:text="Address"
+                android:textSize="50px"
+                android:layout_marginTop="20px"/>
+
+            <EditText
+                android:id="@+id/address_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/address_txt"
+                android:hint="Write Address Here"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50px"
+                android:inputType="text"/>
+
+            <TextView
+                android:id="@+id/phone_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/address_edit"
+                android:text="Phone number"
+                android:textSize="50px"
+                android:layout_marginTop="50px" />
+
+            <EditText
+                android:id="@+id/phone_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phone_txt"
+                android:hint="Phone number Here"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50px"
+                android:inputType="phone"/>
+
+            <TextView
+                android:id="@+id/phone_2_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/phone_edit"
+                android:text="Phone number 2"
+                android:textSize="50px"
+                android:layout_marginTop="50px"/>
+
+            <EditText
+                android:id="@+id/phone_2_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phone_2_txt"
+                android:hint="Phone number 2 Here"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50px"
+                android:inputType="phone"/>
+
+            <TextView
+                android:id="@+id/email_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/phone_2_edit"
+                android:text="E-mail"
+                android:textSize="50px"
+                android:layout_marginTop="50px"/>
+
+            <EditText
+                android:id="@+id/email_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/email_txt"
+                android:hint="E-mail Here"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50px"
+                android:inputType="text"/>
+
+            <Button
+                android:id="@+id/btn_add_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/email_edit"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50px"
+                android:layout_marginBottom="20px"
+                android:text="Add info"
+                android:onClick="update"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
     
 
 </RelativeLayout>

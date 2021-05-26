@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -78,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                             Toast.makeText(getApplicationContext(), "Logged In", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), Feed.class);
+                            intent.putExtra("user_cin", cin);
                             startActivity(intent);
 
                         } else {

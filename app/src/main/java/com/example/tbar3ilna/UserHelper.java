@@ -8,10 +8,12 @@ public class UserHelper {
     }
 
     public UserHelper(String fullName, String birthDate, String cinNum, String bloodGrp) {
+
         this.fullName = fullName;
         this.birthDate = birthDate;
         this.cinNum = cinNum;
         this.bloodGrp = bloodGrp;
+
     }
 
     public String getFullName() {

@@ -17,12 +17,24 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20px"/>
 
+    <TextView
+        android:id="@+id/add_info_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add info"
+        android:layout_below="@+id/feed_txt"
+        android:textSize="50px"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50px"/>
+
+
     <Button
         android:id="@+id/btn_logout_feed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign out"
-        android:layout_below="@+id/feed_txt"
+        android:layout_below="@+id/add_info_txt"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50px"
         android:onClick="logOut"/>
